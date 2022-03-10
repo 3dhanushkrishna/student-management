@@ -73,9 +73,9 @@ while True:
         print(table)
     elif choice == 5:
         getAdmNo = input("Enter the admno: ")
+
         getName = input("Enter the Name: ")
         getRollNO = input("Enter the RollNo: ")
-
         getExamName = input("Enter the ExamName: ")
         getEnglishMark = input("Enter the EnglishMark: ")
         getMathsMark = input("Enter the MathsMark: ")
@@ -85,7 +85,7 @@ while True:
         result = connection.execute("UPDATE STUDENTDATA SET Name='"+getName+"',RollNo="+getRollNO+",ExamName='"+getExamName+"',EnglishMark="+getEnglishMark+",MathsMark="+getMathsMark+",PhysicsMark="+getPhysicsMark+",ChemistryMark="+getChemistryMark+",BiologyMark="+getBiologyMark+" WHERE admno="+getAdmNo+"")
         connection.commit()
         print("student data updated successfully")
-        result = connection.execute("SELECT * FROM STUDENTDATA WHERE ADMNO="+getAdmNo+"")
+        result = connection.execute("SELECT * FROM STUDENTDATA")
         print("Data Updated")
         table = PrettyTable(["ID", "NAME", "ROLLNO","ADMNO", "EXAMNAME", "ENGLISHMARK", "MATHSMARK", "PHYSICSMARK", "CHEMISTRYMARK",
              "BIOLOGYMARK"])
